@@ -5,6 +5,7 @@ Partes que faltan en el documento
 -	 Introducción
 -	 Resumen idea central de trabajo
 1.	 Estado del arte
+ asdasds
 2.8
 2.9
 2.10
