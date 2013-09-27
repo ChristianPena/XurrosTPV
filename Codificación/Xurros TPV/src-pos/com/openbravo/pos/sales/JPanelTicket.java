@@ -194,7 +194,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         
         // inicializamos
         m_oTicket = null;
-        m_oTicketExt = null;
+        m_oTicketExt = null;        
+        m_jContEntries.setVisible(false);
     }
     
     public Object getBean() {
@@ -1418,7 +1419,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
         m_jOptions.setLayout(new java.awt.BorderLayout());
 
-        m_jTicketId.setBackground(java.awt.Color.white);
         m_jTicketId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         m_jTicketId.setOpaque(true);
         m_jTicketId.setPreferredSize(new java.awt.Dimension(160, 25));
@@ -1554,8 +1554,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
         m_jPanTotals.setLayout(new java.awt.GridBagLayout());
 
-        m_jTotalEuros.setBackground(java.awt.Color.white);
-        m_jTotalEuros.setFont(new java.awt.Font("Dialog", 1, 14));
+        m_jTotalEuros.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         m_jTotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jTotalEuros.setOpaque(true);
         m_jTotalEuros.setPreferredSize(new java.awt.Dimension(150, 25));
@@ -1577,7 +1576,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
         m_jPanTotals.add(m_jLblTotalEuros1, gridBagConstraints);
 
-        m_jSubtotalEuros.setBackground(java.awt.Color.white);
         m_jSubtotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jSubtotalEuros.setOpaque(true);
         m_jSubtotalEuros.setPreferredSize(new java.awt.Dimension(150, 25));
@@ -1591,7 +1589,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 5);
         m_jPanTotals.add(m_jSubtotalEuros, gridBagConstraints);
 
-        m_jTaxesEuros.setBackground(java.awt.Color.white);
         m_jTaxesEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jTaxesEuros.setOpaque(true);
         m_jTaxesEuros.setPreferredSize(new java.awt.Dimension(150, 25));
@@ -1629,7 +1626,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        m_jDiscount.setBackground(java.awt.Color.white);
         m_jDiscount.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jDiscount.setOpaque(true);
         m_jDiscount.setPreferredSize(new java.awt.Dimension(115, 25));
@@ -1674,12 +1670,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
         m_jTariffPanel.setLayout(new java.awt.GridLayout(1, 0));
 
-        m_jTariff.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "bad" }));
-        m_jTariff.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                m_jTariffActionPerformed(evt);
-            }
-        });
         jLabel5.setText(AppLocal.getIntString("Menu.TariffArea")); // NOI18N
         m_jTariffPanel.add(jLabel5);
         m_jTariffPanel.add(m_jTariff);
@@ -1704,7 +1694,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         jPanel9.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jPanel9.setLayout(new java.awt.GridBagLayout());
 
-        m_jPrice.setBackground(java.awt.Color.white);
         m_jPrice.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jPrice.setOpaque(true);
         m_jPrice.setPreferredSize(new java.awt.Dimension(100, 22));
@@ -1718,7 +1707,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         gridBagConstraints.weighty = 1.0;
         jPanel9.add(m_jPrice, gridBagConstraints);
 
-        m_jPor.setBackground(java.awt.Color.white);
         m_jPor.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jPor.setOpaque(true);
         m_jPor.setPreferredSize(new java.awt.Dimension(22, 22));
@@ -1850,18 +1838,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
     }//GEN-LAST:event_m_jEditLineActionPerformed
 
-    private void m_jEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jEnterActionPerformed
-
-        stateTransition('\n');
-
-    }//GEN-LAST:event_m_jEnterActionPerformed
-
-    private void m_jNumberKeysKeyPerformed(com.openbravo.beans.JNumberEvent evt) {//GEN-FIRST:event_m_jNumberKeysKeyPerformed
-
-        stateTransition(evt.getKey());
-
-    }//GEN-LAST:event_m_jNumberKeysKeyPerformed
-
     private void m_jKeyFactoryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_m_jKeyFactoryKeyTyped
 
         m_jKeyFactory.setText(null);
@@ -1937,6 +1913,16 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         }
         
     }//GEN-LAST:event_m_jEditLine1ActionPerformed
+
+    private void m_jEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jEnterActionPerformed
+
+        stateTransition('\n');
+    }//GEN-LAST:event_m_jEnterActionPerformed
+
+    private void m_jNumberKeysKeyPerformed(com.openbravo.beans.JNumberEvent evt) {//GEN-FIRST:event_m_jNumberKeysKeyPerformed
+
+        stateTransition(evt.getKey());
+    }//GEN-LAST:event_m_jNumberKeysKeyPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
