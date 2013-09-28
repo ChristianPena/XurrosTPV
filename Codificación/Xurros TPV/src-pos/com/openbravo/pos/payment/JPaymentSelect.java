@@ -215,7 +215,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         public JPaymentInterface createJPayment() {
             return new JPaymentDebt(JPaymentSelect.this);
         }
-        public String getKey() { return "payment.debt"; }
+        public String getKey() { return "paymente.debt"; }
         public String getLabelKey() { return "tab.debt"; }
         public String getIconKey() { return "/com/openbravo/images/kdmconfig32.png"; }
     }   
