@@ -1384,6 +1384,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         m_jDelete = new javax.swing.JButton();
         m_jList = new javax.swing.JButton();
         m_jEditLine = new javax.swing.JButton();
+        m_jBill = new javax.swing.JButton();
         m_jPanelCentral = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         m_jPanTotals = new javax.swing.JPanel();
@@ -1543,6 +1544,18 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
             }
         });
         jPanel2.add(m_jEditLine);
+
+        m_jBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/bill.png"))); // NOI18N
+        m_jBill.setFocusPainted(false);
+        m_jBill.setFocusable(false);
+        m_jBill.setMargin(new java.awt.Insets(8, 14, 8, 14));
+        m_jBill.setRequestFocusEnabled(false);
+        m_jBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                m_jBillActionPerformed(evt);
+            }
+        });
+        jPanel2.add(m_jBill);
 
         jPanel5.add(jPanel2, java.awt.BorderLayout.NORTH);
 
@@ -1924,6 +1937,18 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         stateTransition(evt.getKey());
     }//GEN-LAST:event_m_jNumberKeysKeyPerformed
 
+    private void m_jBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jBillActionPerformed
+        // Botón que se agregó para iniciar la cobranza.
+        if (m_oTicket.getLinesCount() > 0) {
+            if (closeTicket(m_oTicket, m_oTicketExt)) {
+                // Ends edition of current receipt
+                m_ticketsbag.deleteTicket();  
+            }
+        } else {
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }//GEN-LAST:event_m_jBillActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCustomer;
@@ -1935,6 +1960,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JButton m_jBill;
     private javax.swing.JButton m_jBtnDelGlobalDiscount;
     private javax.swing.JPanel m_jButtons;
     private javax.swing.JPanel m_jButtonsExt;
