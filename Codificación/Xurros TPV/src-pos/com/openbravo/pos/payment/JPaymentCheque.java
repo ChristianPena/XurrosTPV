@@ -55,9 +55,11 @@ public class JPaymentCheque extends javax.swing.JPanel implements JPaymentInterf
         printState();
         
     }
+    
     public PaymentInfo executePayment() {
         return new PaymentInfoTicket(m_dPaid, "cheque");      
     }
+    
     public Component getComponent() {
         return this;
     }
