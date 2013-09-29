@@ -119,16 +119,16 @@ public class AppConfig implements AppProperties {
         
         m_propsconfig = new Properties();
                 
-        m_propsconfig.setProperty("db.driverlib", "lib/hsqldb.jar");
-        m_propsconfig.setProperty("db.driver", "org.hsqldb.jdbcDriver");
-        m_propsconfig.setProperty("db.URL", "jdbc:hsqldb:file:" + new File(new File(System.getProperty("user.home")), AppLocal.APP_ID + "-db").getAbsolutePath() + ";shutdown=true");
-        m_propsconfig.setProperty("db.user", "sa");         
-        m_propsconfig.setProperty("db.password", "");
+//        m_propsconfig.setProperty("db.driverlib", "lib/hsqldb.jar");
+//        m_propsconfig.setProperty("db.driver", "org.hsqldb.jdbcDriver");
+//        m_propsconfig.setProperty("db.URL", "jdbc:hsqldb:file:" + new File(new File(System.getProperty("user.home")), AppLocal.APP_ID + "-db").getAbsolutePath() + ";shutdown=true");
+//        m_propsconfig.setProperty("db.user", "sa");         
+//        m_propsconfig.setProperty("db.password", "");
         
-//        m_propsconfig.setProperty("db.driver", "com.mysql.jdbc.Driver");
-//        m_propsconfig.setProperty("db.URL", "jdbc:mysql://localhost:3306/database");
-//        m_propsconfig.setProperty("db.user", "root");         
-//        m_propsconfig.setProperty("db.password", "root");
+        m_propsconfig.setProperty("db.driver", "com.mysql.jdbc.Driver");
+        m_propsconfig.setProperty("db.URL", "jdbc:mysql://localhost:3306/xurros");
+        m_propsconfig.setProperty("db.user", "xurros");         
+        m_propsconfig.setProperty("db.password", "12345");
         
 //        m_propsconfig.setProperty("db.driver", "org.postgresql.Driver");
 //        m_propsconfig.setProperty("db.URL", "jdbc:postgresql://localhost:5432/database");
